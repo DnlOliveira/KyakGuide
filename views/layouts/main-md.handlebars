@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>INSERT TITLE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Css file for the program -->
+    <link rel="stylesheet" href="../assets/css/style.css" media="screen">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse visible-xs">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>      
+      </button>
+                <a class="navbar-brand" href="#">LOGO</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <!-- todo: determine if we need these -->
+                    <!-- the carousel and location links will not work without an arg appended to them -->
+                    <li class="active"><a href="home.html">HOME</a></li>
+                    <li><a href="/">USA MAP</a></li>
+                    <li><a href="carousel.html">Carousel</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="/add">Addition</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav hidden-xs">
+                <img src="../assets/images/download.jpg" width="100px" height="100px" alt="logo">
+                <h2> CAN-I-KAYAK ? </h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <!-- todo: see above for what we should do with these -->
+                    <li class="active"><a href="#section1">HOME</a></li>
+                    <li><a href="view.html">USA Map</a></li>
+                    <li><a href="carousel.html">CAROUSEL</a></li>
+                    <li><a href="location.html">LOCATION</a></li>
+                    <li><a href="addition.html">ADDITION</a></li>
+                </ul><br>
+
+                <div class="col-sm-12">
+                    <div class="well text-center">
+                        <h3>Follow us...</h3>
+                        <a href="https://www.github.com"><img src="../assets/images/github.jpeg" class="class" width="50px" height="50px" alt="Go to Github.com!"></a>
+                        <a href="https://www.facebook.com"><img src="../assets/images/fb.jpeg" class="social" width="50px" height="50px" alt="Go to facebook.com!"></a>
+                        <a href="https://www.googleplus.com"><img src="../assets/images/google+.jpeg" class="social" width="50px" height="50px" alt="Go to googleplus.com!"></a>
+                        <a href="https://www.twitter.com"><img src="../assets/images/twitter.jpeg" class="social" width="50px" height="50px" alt="Go to twitter.com!"></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-9">
+                <!-- handlebars starts here -->
+
+                {{{ body }}}
+
+                <!-- handlebars ends here -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

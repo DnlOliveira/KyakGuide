@@ -1,0 +1,99 @@
+/* bootstrap form starts here*/
+
+
+
+body {
+          background: #1E90ff;
+          background-image: url("http://gph.to/2mWz1FQ ");
+
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+h3  {
+         color: #20b2aa;
+
+    }
+
+.well1, .well2, .well3 { 
+          background-color: transparent;
+      }
+
+.well1, .well2, .well3 , h2, h4{
+          color: #20b2aa;
+}
+
+.row-info  {
+      
+          background-image: url( location.googleId);
+          background-repeat: no-repeat;
+          background-size: cover;
+          opacity: 0.7;
+        }
+
+.row-info ul, li {
+	  font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+	  font-size: 20px;
+	  text-align: left;
+      color: #20b2aa;
+	  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+
+}
+
+/*form*/
+.form-control {
+            width: 75%;
+            margin: 15px;
+        };
+
+label for {
+      color: #20b2aa;
+
+}
+
+label, 
+input[type=text],
+input[type=name],
+textarea  {
+	      color: #20b2aa;
+          display: block;
+          width: 100%;
+           }
+ 
+input[type=text],
+input[type=comments],
+textarea  {
+          height: 40px;
+          border: 1px solid #333;
+          padding: 0 20px;
+          font-size: 14px;
+           }
+
+textarea  {
+          height: 200px;
+          }
+
+#clear,
+#submit{
+          background: #20b2aa;
+          border: 0 none;
+          color: #fff;
+          font-size: 18px;
+          padding: 10px 30px;
+          cursor: pointer;
+          }
+
+#submit:hover  {
+  color: white;
+  background-color: solid black;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+
+#clear:hover  {
+  color: white;
+  background-color: solid black;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}

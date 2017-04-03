@@ -1,0 +1,215 @@
+
+
+/**************  CAROUSEL PAGE STRTS HERE  *************************************/
+
+
+body {
+          background-image: url("http://gph.to/2mWz1FQ ");
+          font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+.well1 {
+    background-color: transparent;
+    box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+    font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+}   
+
+.well1 h3, h4 {
+    color: #20b2aa;
+
+}
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+    height: 750px;
+}
+    
+/* Set gray background color and 100% height */
+.sidenav {
+    background-color: #f1f1f1;
+      height: 100%;
+    box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+ }
+        
+/* On small screens, set height to 'auto' for the grid */
+@media screen and (max-width: 767px) {
+.row.content {height: auto;} 
+    }
+
+.carousel-inner img {
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+    min-height:200px;
+  }
+
+/* Hide the carousel text when the screen is less than 600 pixels wide */
+@media (max-width: 600px) {
+.carousel-caption {
+    display: none; 
+    }
+  }
+
+
+.well  {
+  background-color: #20b2aa;
+  box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+}
+
+.well h3 {
+    color: black;
+
+}
+
+ul, li {
+      box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+      font-size: 20px;
+}
+
+/*************************  LOCATION PAGE STARTS HERE  *****************************/
+
+/* bootstrap form starts here*/
+
+
+
+body {
+          background-image: url("http://gph.to/2mWz1FQ ");
+
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+h3  {
+         color: #20b2aa;
+
+    }
+
+.well1, .well2, .well3 { 
+          background-color: transparent;
+      }
+
+.well1, .well2, .well3 , h2, h4{
+          color: #20b2aa;
+}
+
+.row-info  {
+      
+          background-image: url( location.googleId);
+          background-repeat: no-repeat;
+          background-size: cover;
+          opacity: 0.7;
+        }
+
+.row-info ul, li {
+    font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+    font-size: 20px;
+    text-align: left;
+      color: #20b2aa;
+    box-shadow: 0px 16px 32px 0px rgba(0,0,0,0.2);
+
+}
+
+/*form*/
+.form-control {
+            width: 75%;
+            margin: 15px;
+        };
+
+label for {
+      color: #20b2aa;
+
+}
+
+label, 
+input[type=text],
+input[type=name],
+textarea  {
+        color: #20b2aa;
+          display: block;
+          width: 100%;
+           }
+ 
+input[type=text],
+input[type=comments],
+textarea  {
+          height: 40px;
+          border: 1px solid #333;
+          padding: 0 20px;
+          font-size: 14px;
+           }
+
+textarea  {
+          height: 200px;
+          }
+
+#clear,
+#submit{
+          background: #20b2aa;
+          border: 0 none;
+          color: #fff;
+          font-size: 18px;
+          padding: 10px 30px;
+          cursor: pointer;
+          }
+
+#submit:hover  {
+  color: white;
+  background-color: solid black;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+
+#clear:hover  {
+  color: white;
+  background-color: solid black;
+  -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+/******************* ADDITION PAGE STRTS HERE  ***********************************/
+
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("http://gph.to/2mWz1FQ ");
+
+}
+
+.bootstrap-iso {
+    background-color: #2eb8b8;
+    border-radius: 10px;
+}
+
+#formdata {
+    border-radius: 4px
+}
+
+.bootstrap-iso .formden_header h2,
+.bootstrap-iso .formden_header p,
+.bootstrap-iso form {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1759be;
+    background-color: #169fea;
+}
+
+.bootstrap-iso form button,
+.bootstrap-iso form button:hover {
+    color: white !important;
+}
+
+.asteriskField {
+    color: red;
+}
+
+.bootstrap-iso form .input-group-addon {
+    color: #555555;
+    background-color: #16ead7;
+    border-radius: 4px;
+    padding-left: 12px
+}
+.row {
+     background-color: transparent;
+}

@@ -1,0 +1,44 @@
+<!-- This is where the carousel will appear -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+
+            {{#each locations}}
+                <li data-target="#myCarousel" data-slide-to="{{@index}}" 
+                {{#if @first}}class="active"{{/if}}></li>
+            {{/each}}
+
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                 
+                {{#each locations}}
+                    <div class="item {{#if @first}} active{{/if}}">
+                        <a href="/location/{{this.id}}">
+                            <img class="rotator-image" id="cr{{@index}}" src="{{this.imageUrl}}" alt="{{this.name}}" data-location-id={{this.locationId}}>
+                        </a>
+                        <div class="well1">
+                            <h3 id="data-title">{{this.name}}</h3>
+                            <h4 id="data-address">{{this.street}} {{this.city}} {{this.state}} {{this.zip}}</h4>
+                        </div>
+                    </div>
+                {{/each}}
+
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>

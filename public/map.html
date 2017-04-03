@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Can-I-Kyak?</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" media="screen">
+    <script src="assets/js/carousel.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+    <!-- google maps -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAhGg64lKOYPK-6jEMFKqQlc2TSTHTI2M&libraries=places"></script>
+    <!-- us map dependencies-->
+    <script src="js/us-map-files/lib/raphael.js"></script>
+    <!-- <script src="scale.raphael.js"></script> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+    <script src="js/us-map-files/color.jquery.js"></script>
+    <script src="js/us-map-files/jquery.usmap.js"></script>
+    <!-- JS Files -->
+    <script src="js/view.js"></script>
+    <script src="js/google.js"></script>
+    <script src="js/us-map.js"></script>
+</head>
+<style>
+body {
+    background: #1E90ff;
+    background-image: url("http://gph.to/2mWz1FQ ");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#alert {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    background-color: transparent;
+    color:#20b22aa;
+    padding: 5px;
+    font-weight: bold;
+}
+.well1{
+  background-color: transparent;
+}
+.maptitle{
+  color:#20b2aa;
+  text-align: center;
+  font-size: 28px;
+
+}
+style {
+  background-color: rgb(032,178,170);}
+</style>
+<!-- another water gif http://gph.to/2mWz1FQ -->
+
+<body>
+    <nav class="navbar navbar-inverse visible-xs">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">LOGO</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="home.html">HOME</a></li>
+                    <li><a href="usaMap.html">USA MAP</a></li>
+                    <li><a href="carousel.html">Carousel</a></li>
+                    <li><a href="location.html">Location</a></li>
+                    <li><a href="addition.html">Addition</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav hidden-xs">
+                <img src="assets/images/download.jpg" width="100px" height="100px" alt="logo">
+                <h2> CAN-I-KAYAK ? </h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#section1">HOME</a></li>
+                    <li><a href="#section2">USA Map</a></li>
+                    <li><a href="#section3">CAROUSEL</a></li>
+                    <li><a href="#section4">LOCATION</a></li>
+                    <li><a href="#section5">ADDITION</a></li>
+                </ul>
+                <br>
+                <div class="col-sm-12">
+                    <div class="well text-center">
+                        <h4>Follow us...</h4>
+                        <a href="https://www.github.com"><img src="assets/images/github.jpeg" class="class" width="50px" height="50px" alt="Go to Github.com!"></a>
+                        <a href="https://www.facebook.com"><img src="assets/images/fb.jpeg" class="social" width="50px" height="50px" alt="Go to facebook.com!"></a>
+                        <a href="https://www.googleplus.com"><img src="assets/images/google+.jpeg" class="social" width="50px" height="50px" alt="Go to googleplus.com!"></a>
+                        <a href="https://www.twitter.com"><img src="assets/images/twitter.jpeg" class="social" width="50px" height="50px" alt="Go to twitter.com!"></a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="well1">
+                            <p class="maptitle" ><strong>Click on the Map and Dive in! </strong></p>
+                            <div id="map2" width="800" height="500">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>

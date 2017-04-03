@@ -1,0 +1,289 @@
+<style>
+    label {
+        color: white;
+        text-align: left !important;
+    }
+</style>
+
+<!-- begin header and image row -->
+<div class="row row-info">
+    <div class="row-location col-sm-12">
+        <div class="well1">
+            <h2 id="data-title"><strong>{{this.name}}</strong></h2>
+            <h3 id="data-address"><strong>{{this.street}} {{this.city}} {{this.state}} {{this.zip}}</strong></h3>
+        </div>
+
+        <div class="row-location-image">
+            <img class="img-responsive" src="{{this.imageUrl}}" alt="Image">
+        </div>
+    </div>
+</div>
+<!-- end header and image row -->
+
+<!-- begin details row -->
+<div class="row">
+    <!-- begin difficulty rating -->
+    <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="well">
+            <h3>Difficulty Rating</h3>
+            <!-- difficulty entries -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="well">
+                        <div id="difficulty-info">
+                            <!-- todo: dump difficulty rating here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- difficulty form -->
+            <div class="row" id="row-add-difficulty">
+                <div class="col-xs-12">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Add Difficulty Rating</legend>
+                            <div class="form-group">
+                                <label for="select-difficulty" class="col-xs-12 control-label">Difficulty</label>
+                                <div class="col-xs-12">
+                                    <select class="form-control" id="select-difficulty">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <button type="submit" id="btn-add-difficulty" class="btn btn-block btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>            
+        </div>       
+    </div>
+    <!-- end difficulty rating -->
+
+    <!-- begin rental info -->
+    <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="well">
+            <h3>Rentals</h3>            
+            <!-- rental entries -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="well">
+                        <div id="rental-info">
+                            <!-- todo: dump rental rating here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- rental form -->
+            <div class="row" id="row-add-rental">
+                <div class="col-xs-12">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Add Rental Info</legend>
+                            <div class="form-group">
+                                <label for="select-rental" class="col-xs-12 control-label">Has Rentals?</label>
+                                <div class="col-xs-12">
+                                    <select class="form-control" id="select-rental">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <button type="submit" id="btn-add-rental" class="btn btn-block btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- end rental info -->
+
+    <!-- begin comments -->
+    <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="well">
+            <h3>Comments</h3>
+            <!-- comment entries -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="well">
+                        <div id="comment-info">
+                            <!-- todo: dump comment rating here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- comment form -->
+            <div class="row" id="row-add-comment">
+                <div class="col-xs-12">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>Add a Comment</legend>
+                            <div class="form-group">
+                                <label for="input-comment" class="col-xs-12 control-label">Comment</label>
+                                <div class="col-xs-12">
+                                    <input class="form-control" id="input-comment"></input>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <button type="submit" id="btn-add-comment" class="btn btn-block btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!-- end comments -->
+
+</div>
+<!-- end details row -->
+
+<script>
+    
+    // document load ajax to load comments, ratings, Rentals
+    $(document).ready(function() {
+        var pathArray = window.location.pathname.split('/');
+        var locationId = pathArray[pathArray.length-1];
+        console.log(locationId);
+
+        function loadDifficulty() {
+            $.get('/api/difficulty/' + locationId, function(data) {
+                if (data && data.length > 0) {
+                     var avgDifficulty = 0;
+                    for (var i = 0; i < data.length; i++) {
+                        avgDifficulty+=parseFloat(data[i].difficulty);
+                    }
+
+                    avgDifficulty = parseFloat(avgDifficulty/data.length);
+
+                    $('#difficulty-info').html('Average Rating: ' + avgDifficulty + ' / 5');
+                } else {
+                    $('#difficulty-info').html('No ratings found.');
+                }
+            });
+        }
+
+        function loadRental() {
+            $.get('/api/rental/' + locationId, function(data) {
+                if (data && data.length > 0) {
+                    var hasRental = 0;
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].rental === true) {
+                            hasRental++;
+                        }
+                    }
+
+                    $('#rental-info').html(hasRental + ' out of ' + data.length + ' reviewer(s) say YES');
+                } else {
+                    $('#rental-info').html('No rental info found.');
+                }
+            });
+        }
+
+        function loadComment() {
+            $.get('/api/comment/' + locationId, function(data) {
+                if (data && data.length > 0) {
+                    console.log(data);
+                    var commentString = '';
+                    for (var i = 0; i < data.length; i++) {
+                        commentString += '<div>' + data[i].comment + '</div>' + (i < data.length - 1 ? '<hr>' : '');
+                    }
+
+                    $('#comment-info').html(commentString);
+                } else {
+                    $('#comment-info').html('No comments found.');
+                }
+            });
+        }
+
+        // load difficulty
+       loadDifficulty();
+        
+        // load rentals
+        loadRental();
+        
+        // load comments
+        loadComment();
+
+        // create difficulty
+        $('#btn-add-difficulty').on('click', function(e) {
+            e.preventDefault();
+            var difficulty = $('#select-difficulty').val();
+
+            if (difficulty) {
+                var difficultyObject = {
+                    locationId: locationId,
+                    difficulty: difficulty
+                };
+
+                $.post('/api/difficulty', difficultyObject, function(data) {
+                    // reload the difficulty rating to show new average
+                    loadDifficulty();
+
+                    // hide the add difficulty form
+                    $('#row-add-difficulty').hide();
+                });
+            }
+        });
+
+        // create difficulty
+        $('#btn-add-rental').on('click', function(e) {
+            e.preventDefault();
+            var rental = $('#select-rental').val().trim();
+
+            if (rental) {
+                var rentalObject = {
+                    locationId: locationId,
+                    rental: rental
+                };
+
+                $.post('/api/rental', rentalObject, function(data) {
+                    // reload the rental rating to show new average
+                    loadRental();
+
+                    // hide the add rental form
+                    $('#row-add-rental').hide();
+                });
+            }
+        });
+
+        // create difficulty
+        $('#btn-add-comment').on('click', function(e) {
+            e.preventDefault();
+
+            var comment = $('#input-comment').val().trim();
+
+            if (comment) {
+                var commentObj = {
+                    locationId: locationId,
+                    comment: comment
+                };
+
+                $.post('/api/comment', commentObj, function(data) {
+                    // load new comment
+                    loadComment();
+
+                    // hide the add comment form
+                    $('#row-add-comment').hide();
+                });
+            }
+        });
+    });
+
+</script>
